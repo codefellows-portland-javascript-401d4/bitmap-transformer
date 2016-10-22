@@ -14,8 +14,8 @@ describe('take a bitmap, read the buffer, transform the pixels and write a new f
     bitMapr.readBmp('./non-palette-bitmap.bmp', (err, data) => {
       if (err) throw err;
       ourBuffer = data;
-      bitMapr.transformBuf(ourBuffer, (err, data) => {
-        assert.equal(data.readUInt8(63), 139);
+      bitMapr.transformBuf('greyscale', ourBuffer, (err, data) => {
+        assert.equal(data.readUInt8(63), 80);
         done();
       });
     });
@@ -24,11 +24,11 @@ describe('take a bitmap, read the buffer, transform the pixels and write a new f
     bitMapr.readBmp('./non-palette-bitmap.bmp', (err, data) => {
       if (err) throw err;
       ourBuffer = data;
-      bitMapr.transformBuf(ourBuffer, (err, data) => {
+      bitMapr.transformBuf('greyscale', ourBuffer, (err, data) => {
         bitMapr.writeBmp(data, (err,fName) => {
           fs.readFile(fName, function(err, testData) {
             if(err) throw err;
-            fs.readFile('./testResult.bmp', function(err, goodData) {
+            fs.readFile('./testResultGrey.bmp', function(err, goodData) {
               if(err) throw err;
               assert.deepEqual(testData, goodData);
               done();
