@@ -9,7 +9,8 @@
     "es6": true,
     "browser": true,
     "jquery": true,
-    "node": true
+    "node": true,
+    "mocha": true
   },
   "globals": {
     "describe": false,
@@ -24,6 +25,7 @@
   },
   "extends": "eslint:recommended",
   "rules": {
+    "no-console": 0,
     "semi": 1,
     "strict": 0,
     "indent": [2, 2],
