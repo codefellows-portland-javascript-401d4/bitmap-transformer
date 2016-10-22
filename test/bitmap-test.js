@@ -15,10 +15,28 @@ describe('take a bitmap, read the buffer, transform the pixels and write a new f
       if (err) throw err;
       ourBuffer = data;
       bitMapr.transformBuf(ourBuffer, (err, data) => {
-        console.log(data.readUInt8(63));
         assert.equal(data.readUInt8(63), 139);
         done();
       });
     });
   });
+  it('Should save a transformed bmp file', function(done){
+    bitMapr.readBmp('./non-palette-bitmap.bmp', (err, data) => {
+      if (err) throw err;
+      ourBuffer = data;
+      bitMapr.transformBuf(ourBuffer, (err, data) => {
+        bitMapr.writeBmp(data, (err,fName) => {
+          fs.readFile(fName, function(err, testData) {
+            if(err) throw err;
+            fs.readFile('./testResult.bmp', function(err, goodData) {
+              if(err) throw err;
+              assert.deepEqual(testData, goodData);
+              done();
+            });
+          });
+        });
+      });
+      
+    });
+  })
 });
