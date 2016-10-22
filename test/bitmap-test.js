@@ -9,8 +9,16 @@ describe('take a bitmap, read the buffer, transform the pixels and write a new f
       done();
     });
   });
-
   it('Should retrieve pixel color values', function(done){
-    
-  })
+    let ourBuffer;
+    bitMapr.readBmp('./non-palette-bitmap.bmp', (err, data) => {
+      if (err) throw err;
+      ourBuffer = data;
+      bitMapr.transformBuf(ourBuffer, (err, data) => {
+        console.log(data.readUInt8(63));
+        assert.equal(data.readUInt8(63), 139);
+        done();
+      });
+    });
+  });
 });
