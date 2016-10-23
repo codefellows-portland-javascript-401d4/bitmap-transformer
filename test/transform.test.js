@@ -1,6 +1,6 @@
 var assert = require('chai').assert;
 var fs = require('fs');
-var transform = require('../transform');
+var transform = require('../lib/transform');
 var rimraf = require('rimraf');
 
 describe('transform', done => {
@@ -14,10 +14,8 @@ describe('transform', done => {
     });
     
     it('makes sure console logging works :)', done => {
-        setTimeout(function() {
-            console.log('console logging to make sure rimraf is working');
-            done();
-        }, 1000);
+        console.log('console logging to make sure rimraf is working');
+        done();
     });
 
     it('runs the invertColors function once', done => {

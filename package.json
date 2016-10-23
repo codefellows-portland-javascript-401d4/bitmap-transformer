@@ -4,8 +4,11 @@
   "description": "transforms .bmp images",
   "main": "server.js",
   "scripts": {
-    "test": "mocha transform.test.js",
-    "start": "node transform.js"
+    "pretest": "eslint ./",
+    "test": "mocha ./test/transform.test.js",
+    "lint": "eslint ./",
+    "test:watch": "mocha ./test/transform.test.js -w",
+    "linttest": "eslint ./ && mocha ./test/transform.test.js"
   },
   "repository": {
     "type": "git",
