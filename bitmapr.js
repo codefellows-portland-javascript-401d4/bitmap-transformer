@@ -11,15 +11,23 @@ bitMapr.readBmp = function(path, callback) {
   });
 };
 
-bitMapr.transformBuf = function(data, callback) {
+bitMapr.transformBuf = function(type, data, callback) {
   let imageOffset = data.readIntLE(10, 4);
-  for (let a = imageOffset; a < data.length; a++){
-    // console.log(data.readUInt8(a));
-    let colorVal = (255 - data.readUInt8(a));
-    data.writeUInt8(colorVal, a);    
+  if (type === 'invert') {
+    for (let a = imageOffset; a < data.length; a++){
+      let colorVal = (255 - data.readUInt8(a));
+      data.writeUInt8(colorVal, a);    
+    };
+  } else {
+    for (let a = imageOffset; a < data.length; a+=3) {
+      let colorVal = Math.floor((data.readUInt8(a) + data.readUInt8(a+1) + data.readUInt8(a+2)) / 3);
+      data.writeUInt8(colorVal, a);
+      data.writeUInt8(colorVal, a + 1);
+      data.writeUInt8(colorVal, a + 2);
+    };
   };
   callback(null, data);
-}
+};
 
 bitMapr.writeBmp = function(data, callback) {
   mkdirp('./newImages/', function (err) {
