@@ -53,7 +53,21 @@ describe('testing transformation of bitmap', function() {
 
   });
 
-  it('produces the same image', function() {
+  it('produces the same image', function(done) {
+
+    function isGolden() {
+      fs.readFile('./golden-chicken.bmp', function(err, data) {
+        if (err) throw err;
+        //get buffer of our standard (golden-chicken) 
+        var goldenChickenBuf = Buffer.from(data);
+        //check if new buffer is the same as our standard (golden-chicken)
+        console.log('checking if golden');
+        assert.deepEqual(goldenChickenBuf, read.newBuf);
+        done();
+      });
+    }
+
+    read.readWrite('./non-palette-bitmap.bmp', isGolden);
 
   });
 
