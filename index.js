@@ -1,4 +1,3 @@
-const fs = require('fs');
 const path = require('path');
 const cmd = require('commander');
 const readBMP = require('./lib/readBMP');
