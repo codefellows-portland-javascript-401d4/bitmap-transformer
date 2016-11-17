@@ -1,0 +1,32 @@
+{
+  "name": "bitmap-transformer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "eslint **/*.js",
+    "pretest": "npm run lint",
+    "test": "mocha",
+    "watch": "npm run test -- -w",
+    "start": "node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mizutombo/bitmap-transformer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mizutombo/bitmap-transformer/issues"
+  },
+  "homepage": "https://github.com/mizutombo/bitmap-transformer#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-fs": "^1.0.0",
+    "eslint": "^3.9.0",
+    "mocha": "^3.1.2"
+  }
+}
