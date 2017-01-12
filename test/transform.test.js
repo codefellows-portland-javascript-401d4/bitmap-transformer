@@ -16,10 +16,10 @@ describe('bitmap color transformer', function() {
         function invertImage() {
             fs.readFile('./non-palette-bitmap.bmp', function(err, data) {
                 if (err) throw err;
-                var originalByte = data[15000];
-                var invertedByte = 255 - originalByte;
+                var byte15k = data[15000];
+                var invertedByte = 255 - byte15k;
 
-                assert.deepEqual(invertedByte, read.originalByteInverted);
+                assert.deepEqual(invertedByte, read.byte15kInverted);
                 done();
             });
         }
