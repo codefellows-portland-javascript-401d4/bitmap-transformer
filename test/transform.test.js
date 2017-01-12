@@ -1,16 +1,8 @@
 const fs = require ('fs');
-const rimraf = require('rimraf');
 const assert = require('assert');
 const read = require ('../lib/transform');
 
 describe('bitmap color transformer', function() {
-    beforeEach(function(done) {
-        rimraf('./inverted.bmp', done);
-    });
-
-    after(function(done) {
-        rimraf('./inverted.bmp');
-    });
     
     it('adds new image for test', function(done) {
         function addImage() {
