@@ -1,15 +1,28 @@
 {
-  "rules": {
-    "indent": ["error", 4],
-    "quotes": ["error", "single"],
-    "linebreak-style": ["error", "unix"],
-    "semi": ["error", "always"],
-    "no-console": "off" 
+   "settings": {
+     "ecmascript": 5
+  },
+  "ecmaFeatures": {
+    "modules": true
   },
   "env": {
     "es6": true,
+    "browser": true,
+    "jquery": true,
     "node": true,
     "mocha": true
   },
-  "extends": "eslint:recommended"
+  "rules": {
+    "semi": [2, "always"],
+    "strict": 0,
+    "eqeqeq": 1,
+    "no-multi-spaces": [1, {
+      "exceptions": {
+        "VariableDeclarator": true,
+        "FunctionExpression": true
+      }
+    }],
+    "key-spacing": [0, {"align": "value"}],
+    "no-underscore-dangle": 0
+  }
 }
