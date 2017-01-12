@@ -1,26 +1,27 @@
 {
   "name": "bitmap-transformer",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
+  "description": "bitmap-transformer-lab",
+  "main": "transformBmp.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "npm run lint",
+    "lint": "eslint .",
+    "test": "mocha",
+    "watch": "npm run test -- -w"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/caraldi/bitmap-transformer.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Caitlin Araldi",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/caraldi/bitmap-transformer/issues"
   },
   "homepage": "https://github.com/caraldi/bitmap-transformer#readme",
   "devDependencies": {
     "chai": "^3.5.0",
+    "eslint": "^3.13.1",
     "mocha": "^3.1.2"
   }
 }
