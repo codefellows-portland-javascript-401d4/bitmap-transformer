@@ -42,6 +42,6 @@ bitMapr.writeBmp = function(data, callback) {
       callback(null, './newImages/newBmp.bmp');
     });
   });
-}
+};
 
 module.exports = bitMapr;
