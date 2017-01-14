@@ -1,8 +1,8 @@
-var fs = require('fs');
+const fs = require('fs');
 fs.readFile('./non-palette-bitmap.bmp', function(err, buffer){
   if (err) throw err;
   const buf = Buffer.from(buffer);
-  var imageOffset = buf.readIntLE(10, 4);
+  let imageOffset = buf.readIntLE(10, 4);
   
   console.log(buf.readIntLE(28, 4));
   console.log('size', buf.readIntLE(2, 4));
