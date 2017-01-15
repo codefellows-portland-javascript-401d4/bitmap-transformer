@@ -1,0 +1,28 @@
+{
+  "name": "bitmap-transformer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "test:watch": "npm run test:run -- -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dchasepdx/bitmap-transformer.git"
+  },
+  "author": "David Chase, Andy Beers, John Gothro, Steven Jackson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dchasepdx/bitmap-transformer/issues"
+  },
+  "homepage": "https://github.com/dchasepdx/bitmap-transformer#readme",
+  "devDependencies": {
+    "eslint": "^3.8.1",
+    "mocha": "^3.2.0",
+    "rimraf": "^2.5.4"
+  },
+  "dependencies": {
+    "mkdirp": "^0.5.1"
+  }
+}
