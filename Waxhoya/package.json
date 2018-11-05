@@ -1,0 +1,33 @@
+{
+  "name": "transforminator",
+  "version": "0.1.0",
+  "description": "transforms .bmp images",
+  "main": "server.js",
+  "scripts": {
+    "pretest": "eslint ./",
+    "test": "mocha ./test/transform.test.js",
+    "lint": "eslint ./",
+    "test:watch": "mocha ./test/transform.test.js -w",
+    "linttest": "eslint ./ && mocha ./test/transform.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Waxhoya/bitmap-transformer.git"
+  },
+  "author": "Chris, Michelle, Aj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Waxhoya/bitmap-transformer/issues"
+  },
+  "homepage": "https://github.com/Waxhoya/bitmap-transformer#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.8.1",
+    "mocha": "^3.1.2",
+    "rimraf": "^2.5.4"
+  },
+  "dependencies": {
+    "chai": "^3.5.0",
+    "rimraf": "^2.5.4"
+  }
+}
